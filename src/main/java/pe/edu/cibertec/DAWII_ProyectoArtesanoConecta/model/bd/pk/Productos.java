@@ -21,6 +21,8 @@ public class Productos {
     private Double precio;
     @Column(name = "stock")
     private Integer stock;
+    @Column(name = "discontinued")
+    private Boolean discontinued;
 
     @ManyToOne
     @JoinColumn(name="categoriaid")
