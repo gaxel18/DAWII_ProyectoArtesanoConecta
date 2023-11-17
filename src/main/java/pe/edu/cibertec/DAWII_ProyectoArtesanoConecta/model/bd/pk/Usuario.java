@@ -20,10 +20,14 @@ public class Usuario {
     private String email;
     @Column(name = "pass")
     private String pass;
+    @Column(name="nombres")
+    private String nombres;
+    @Column(name="apellidos")
+    private String apellidos;
     @Column(name = "activo")
     private Boolean activo;
 
-    @ManyToOne(
+    @ManyToMany(
             cascade = CascadeType.MERGE,
             fetch = FetchType.EAGER )
     @JoinTable(name = "usuario_rol", joinColumns =

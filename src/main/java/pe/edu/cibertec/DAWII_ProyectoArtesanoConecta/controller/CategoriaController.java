@@ -18,7 +18,7 @@ public class CategoriaController {
 
     @GetMapping("/listar")
     @ResponseBody
-    public List<Categorias> listarCategorias(){
+      public List<Categorias> listarCategorias(){
         return categoriaService.listarCategorias();
     }
 }

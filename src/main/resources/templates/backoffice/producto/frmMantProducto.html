@@ -28,9 +28,8 @@
                 <th scope="col">stock</th>
                 <th scope="col">Categorias</th>
                 <th scope="col">Artesanos</th>
-                <th scope="col">Fecha de Creacion</th>
                 <th scope="col">Actualizar</th>
-            </tr>
+             </tr>
             </thead>
             <tbody>
             <tr th:each="prod :${listaProductos}">
@@ -41,7 +40,6 @@
                 <td th:text="${prod.stock}"></td>
                 <td th:text="${prod.categorias.nombre}"></td>
                 <td th:text="${prod.artesanos.nombre}"></td>
-                <td th:text="${prod.fechaCreacion}"></td>
                 <td>
                     <button type="button" class="btn btn-info btnactualizar"
                             th:data-prodcod="${prod.productoid}"
@@ -51,7 +49,6 @@
                             th:data-prodname="${prod.stock}"
                             th:data-prodcateg="${prod.categorias.categoriaid}"
                             th:data-prodprov="${prod.artesanos.artesanoid}"
-                            th:data-prodname="${prod.fechaCreacion}"
                             th:data-descontinuado="${prod.discontinued}"><i class="fas fa-edit"></i></button>
                 </td>
             </tr>
@@ -112,5 +109,4 @@
     </div>
 </div>
 </body>
-
 </html>

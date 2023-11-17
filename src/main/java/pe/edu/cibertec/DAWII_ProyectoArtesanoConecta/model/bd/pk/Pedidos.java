@@ -14,10 +14,20 @@ public class Pedidos {
     @Id
     private Integer pedidoid;
 
+    @Column(name="fechapedido")
+    private Date fechaPedido;
+
+    @Column(name = "fechaenvio")
+    private Date fechaEnvio;
+
+    @Column(name="direccion")
+    private String direccion;
+
     @ManyToOne
     @JoinColumn(name="clienteid")
     private Clientes clientes;
 
-    @Column(name = "fechaPedido")
-    private Date fechaPedido;
+    @ManyToOne
+    @JoinColumn(name="artesanoid")
+    private Artesanos artesanos;
 }

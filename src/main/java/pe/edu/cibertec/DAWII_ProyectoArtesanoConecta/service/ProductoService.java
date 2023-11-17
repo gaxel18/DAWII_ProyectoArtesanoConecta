@@ -25,9 +25,7 @@ public class ProductoService {
                 objProducto.setProductoid(producto.getProductoid());
             }
             objProducto.setNombre(producto.getNombre());
-            objProducto.setDescripcion(producto.getDescripcion());
             objProducto.setPrecio(producto.getPrecio());
-            objProducto.setStock(producto.getStock());
             Boolean discontinued = false;
             if(producto.getDiscontinued() != null){
                 discontinued = producto.getDiscontinued();
@@ -39,7 +37,7 @@ public class ProductoService {
             artesanos.setArtesanoid(producto.getArtesanoid());
             objProducto.setCategorias(categorias);
             objProducto.setArtesanos(artesanos);
-            objProducto.setFechaCreacion(producto.getFechaCreacion());
+            productoRepository.save(objProducto);
         }catch (Exception ex){
             mensaje = "Producto no registrado";
             respuesta = false;

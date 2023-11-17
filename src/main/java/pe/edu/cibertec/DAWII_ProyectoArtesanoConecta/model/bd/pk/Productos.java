@@ -12,6 +12,7 @@ import java.util.Date;
 @Table(name="productos")
 public class Productos {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer productoid;
     @Column(name = "nombre")
     private String nombre;
@@ -21,6 +22,7 @@ public class Productos {
     private Double precio;
     @Column(name = "stock")
     private Integer stock;
+
     @Column(name = "discontinued")
     private Boolean discontinued;
 
@@ -31,7 +33,4 @@ public class Productos {
     @ManyToOne
     @JoinColumn(name = "artesanoid")
     private Artesanos artesanos;
-
-    @Column(name = "fechaCreacion")
-    private Date fechaCreacion;
 }

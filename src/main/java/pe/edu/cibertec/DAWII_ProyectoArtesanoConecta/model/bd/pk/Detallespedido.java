@@ -9,19 +9,15 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "detallesPedido")
 public class Detallespedido {
-    @Id
-    private Integer detalleid;
+    @EmbeddedId
+    private DetallePedidoId detallePedidoId;
 
-    @ManyToOne
-    @JoinColumn(name = "pedidoid")
-    private Pedidos pedidos;
+    @Column(name="preciounitario")
+    private Double preciounitario;
 
-    @ManyToOne
-    @JoinColumn(name = "productoid")
-    private Productos productos;
-
-    @Column(name = "cantidad")
+    @Column(name="cantidad")
     private Integer cantidad;
-    @Column(name = "precioUnitario")
-    private Double precioUnitario;
+
+    @Column(name="descuento")
+    private Double descuento;
 }

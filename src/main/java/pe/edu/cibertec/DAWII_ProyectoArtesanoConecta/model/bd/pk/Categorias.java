@@ -16,4 +16,6 @@ public class Categorias {
     private Integer categoriaid;
     @Column(name = "nombre")
     private String nombre;
+    @Column(name="descripcion")
+    private String descripcion;
 }

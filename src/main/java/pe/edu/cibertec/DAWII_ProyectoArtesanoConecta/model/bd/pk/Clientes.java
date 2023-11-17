@@ -26,6 +26,4 @@ public class Clientes {
     private String telefono;
     @Column(name = "email")
     private String email;
-    @Column(name = "fechaRegistro")
-    private Date fechaRegistro;
 }

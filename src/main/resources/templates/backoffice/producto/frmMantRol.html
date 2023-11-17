@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<script th:src="@{/scripts/web/backoffice/product/frmMantRol.js}"
+        type="text/javascript"></script>
+<nav th:replace="~{layout::menu}"></nav>
+<div class="card ">
+    <div class="card-header text-bg-dark mb-3">
+        Mantenimiento de Roles
+    </div>
+    <div class="card-body">
+        <button id="btnagregar"
+                type="button" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</button>
+        <hr />
+        <div id="mensaje"></div>
+        <table id="tblrol" class="table">
+            <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Actualizar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="rol :${listaRoles}">
+                <td th:text="${rol.rolid}"></td>
+                <td th:text="${rol.nombre}"></td>
+                <td>
+                    <button type="button" class="btn btn-info btnactualizar"
+                            th:data-rolcod="${rol.rolid}"
+                            th:data-rolname="${rol.nombre}"></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Modal Registrar / Actualizar Categoria -->
+<div class="modal fade" id="modalNuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Rol</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="txtnomrol" class="form-label">ROL</label>
+                    <input type="text" class="form-control" id="txtnomrol">
+                </div>
+
+                <input type="hidden" id="hddcodprod" value="0">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancelar</button>
+                <button type="button" id="btnguardar" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
